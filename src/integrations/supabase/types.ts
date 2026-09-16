@@ -14,13 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      clicks: {
+        Row: {
+          browser: string | null
+          clicked_at: string
+          country: string | null
+          device: string | null
+          id: string
+          link_id: string
+          referer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          browser?: string | null
+          clicked_at?: string
+          country?: string | null
+          device?: string | null
+          id?: string
+          link_id: string
+          referer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          browser?: string | null
+          clicked_at?: string
+          country?: string | null
+          device?: string | null
+          id?: string
+          link_id?: string
+          referer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "clicks_link_id_fkey"
+            columns: ["link_id"]
+            isOneToOne: false
+            referencedRelation: "links"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      links: {
+        Row: {
+          active: boolean
+          created_at: string
+          custom_alias: boolean
+          id: string
+          original_url: string
+          short_code: string
+          title: string
+          total_clicks: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          custom_alias?: boolean
+          id?: string
+          original_url: string
+          short_code: string
+          title?: string
+          total_clicks?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          custom_alias?: boolean
+          id?: string
+          original_url?: string
+          short_code?: string
+          title?: string
+          total_clicks?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          nome: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string
+          id: string
+          nome?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          nome?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      resolve_link: {
+        Args: { _code: string; _referer?: string; _user_agent?: string }
+        Returns: string
+      }
+      short_code_available: { Args: { _code: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
