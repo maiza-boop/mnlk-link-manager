@@ -23,6 +23,8 @@ export const Route = createFileRoute("/auth")({
       },
       { property: "og:title", content: "Entrar ou criar conta — MNLK" },
       { property: "og:description", content: "Acesse seu painel de links curtos MNLK." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: AuthPage,
@@ -54,7 +56,7 @@ function AuthPage() {
           email,
           password: senha,
           options: {
-            emailRedirectTo: window.location.origin + "/dashboard",
+            emailRedirectTo: window.location.origin + "/auth",
             data: { nome },
           },
         });

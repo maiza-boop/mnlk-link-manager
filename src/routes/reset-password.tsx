@@ -13,6 +13,8 @@ export const Route = createFileRoute("/reset-password")({
       { name: "description", content: "Defina uma nova senha para sua conta MNLK." },
       { property: "og:title", content: "Criar nova senha — MNLK" },
       { property: "og:description", content: "Defina uma nova senha para sua conta MNLK." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ResetPassword,
