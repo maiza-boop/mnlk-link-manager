@@ -107,7 +107,7 @@ function Home() {
                 {SHORT_DOMAIN}
               </span>
               <h1 className="mt-6 text-4xl font-bold leading-[1.08] text-primary-deep sm:text-5xl md:text-6xl">
-                Encurte seus links e acompanhe seus resultados.
+                Seu link. Seu controle. Seus resultados.
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
                 Crie URLs curtas, organize seus links e acompanhe o desempenho de cada acesso em um
